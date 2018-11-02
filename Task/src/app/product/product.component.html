@@ -1,0 +1,36 @@
+ <p>
+  product works!
+</p> 
+<div class="panel Panel-info col-md-3">
+
+  
+    <!-- {{UserMatch}}
+    {{Details}}={{Product?.Product}} -->
+       
+    <div>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>ProductId</th>
+          <th>Product</th>
+        
+      </tr>
+    </thead>
+
+        <tr *ngIf= "Products">
+            <td>{{item.productId}}</td>
+            <td>{{item.product}}</td>
+     
+        </tr>
+       </table>
+       </div>
+      <div class = "footer">
+        <button class="btn btn-lg btn-primary"
+      (click)="onBack()"
+      >
+      Back
+      </button>
+      </div>
+      
+
+

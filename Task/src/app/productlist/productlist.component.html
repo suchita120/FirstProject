@@ -1,0 +1,83 @@
+
+   <!-- <p>
+    productlist works!
+  </p> -->
+  <div class="container">
+  <div class ="row">
+  <div class="panel panel-success" >
+  <div class= "panel panel-info col-md-12">
+    
+
+ <!-- <ul *ngFor = "let item of items ">
+
+    <li>{{item.userId}}</li>
+    <li>{{item.id}}</li>
+    <li>{{item.body}}</li>
+     <li>{{item.title}}</li>
+    </ul>  -->
+
+
+    
+
+      <div><h1>Hello world</h1>
+      <button class= "btn btn-md btn-primary"(click)="clicked()">show image</button>
+      <div *ngIf="show">
+
+      <img class="img-responsive" src="./assets/images/img1.jpg" class="img-rounded" width="100px"Height="100px">
+     
+      </div></div>
+   <br/>
+
+
+        Search
+            <input type="text" [(ngModel)]="Products" placeholder="Product name"/>
+    {{Products}} 
+    <table class="table">
+      <thead>
+         <tr>
+        <!-- <th>Image</th> -->
+        <th>product </th> 
+        <th>code</th>
+        <th>available</th>
+        <th>price</th>
+        <th>5 Star Rating</th>
+        
+
+      </tr>
+    </thead>
+   
+      <tr *ngFor="let item of items | searchfilter:Products ">
+        
+        <!-- <td>{{item.Image}}</td> -->
+        
+        <td><a [routerLink]="['/items',item.productId]">{{item.product}}</a></td>
+        <td>{{item.code}}</td>
+        <td>{{item.available}}</td>
+        <td>{{item.price | currency:'INR':true:'1.2-2'}}</td>
+        <td><app-rating></app-rating></td>
+        
+
+      
+
+      <!-- <td>
+        <a [routerLink]="['/items',item.product]">{{item.product}}
+          </a>
+        </td> -->
+        <!-- <td>
+          {{item.code | lowercase}}
+          </td>
+
+          <td>
+            {{item.available}}
+            </td> -->
+
+
+       
+      </tr>
+      
+        
+    </table>
+  </div>
+  </div>
+  </div>
+  </div>
